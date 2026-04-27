@@ -17,17 +17,20 @@
 }
 
 body {
-  background: #ffffff;
+  background: #fff;
   color: #111;
 }
 
+/* NAVBAR FIX */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   background: white;
   padding: 15px;
   text-align: center;
   border-bottom: 1px solid #eee;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -37,15 +40,17 @@ body {
   font-weight: 500;
 }
 
+/* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 100px 20px 20px; /* kasih jarak karena navbar fixed */
 }
 
+/* HEADER */
 .header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 .profile-img {
@@ -57,6 +62,7 @@ body {
   margin-bottom: 15px;
 }
 
+/* SECTION */
 .section {
   margin-top: 40px;
   opacity: 0;
@@ -75,6 +81,7 @@ body {
   display: inline-block;
 }
 
+/* SKILL */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -87,12 +94,18 @@ body {
   padding: 20px;
   text-align: center;
   background: #fafafa;
+  transition: 0.3s;
 }
 
 .skill-card img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
   margin-bottom: 10px;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
 }
 
 ul {
@@ -156,23 +169,27 @@ ul {
 
     <div class="skill-grid">
 
+      <!-- WORD -->
       <div class="skill-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Microsoft_Office_Word_%282019–present%29.svg">
         <p>Microsoft Word</p>
       </div>
 
+      <!-- EXCEL -->
       <div class="skill-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732228.png">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
         <p>Microsoft Excel</p>
       </div>
 
+      <!-- ANALYTICS -->
       <div class="skill-card">
         <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
         <p>Google Analytics</p>
       </div>
 
+      <!-- EDITING (LAPTOP) -->
       <div class="skill-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png">
         <p>Editing</p>
       </div>
 
