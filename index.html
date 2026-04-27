@@ -13,15 +13,35 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #0f172a;
-  color: white;
+  background: #ffffff;
+  color: #111;
 }
 
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+/* CONTAINER */
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   padding: 20px;
 }
@@ -30,38 +50,37 @@ body {
 .header {
   text-align: center;
   padding: 40px 20px;
-  animation: fadeIn 1.5s ease;
 }
 
-.header img {
-  width: 130px;
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #38bdf8;
   margin-bottom: 15px;
+  border: 3px solid #000;
 }
 
-.header h1 {
-  font-size: 28px;
+/* SECTION */
+.section {
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
 }
 
-.header p {
-  opacity: 0.8;
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* CARD */
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 20px;
-  animation: slideUp 1s ease;
-}
-
-.card h2 {
+.section h2 {
   margin-bottom: 10px;
-  color: #38bdf8;
+  border-bottom: 2px solid #000;
+  display: inline-block;
 }
 
+/* LIST */
 ul {
   padding-left: 20px;
 }
@@ -70,20 +89,26 @@ ul {
   margin-top: 10px;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+/* BUTTON WA */
+.wa-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
+/* MOBILE FEEL */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  .navbar {
+    font-size: 14px;
   }
 }
 </style>
@@ -91,28 +116,38 @@ ul {
 
 <body>
 
+<div class="navbar">
+  <a href="#about">Tentang</a>
+  <a href="#skill">Skill</a>
+  <a href="#exp">Pengalaman</a>
+  <a href="#edu">Pendidikan</a>
+</div>
+
 <div class="container">
 
   <div class="header">
-    <!-- GANTI FOTO DI SINI -->
-    <img src="https://raw.githubusercontent.com/mitra-umkm-tangerang1/cv-rohman-bramanto/372429536313543394c98009d5f46e0c40da287f/IMG_7405.png" alt="foto">
-
+    <img class="profile-img" src="LINK-FOTO-KAMU">
     <h1>ROHMAN BRAMANTO</h1>
     <p>Store Crew</p>
     <p>Kabupaten Tangerang</p>
     <p>0857-1853-9571</p>
     <p>rohmanengkoh007@gmail.com</p>
+
+    <!-- TOMBOL WHATSAPP -->
+    <a class="wa-btn" href="https://wa.me/6285718539571" target="_blank">
+      Hubungi Saya
+    </a>
   </div>
 
-  <div class="card">
-    <h2>Ringkasan Profesional</h2>
+  <div id="about" class="section">
+    <h2>Ringkasan</h2>
     <p>
       Berpengalaman di bidang retail dan manufaktur, terbiasa bekerja dengan target,
       disiplin tinggi, serta fokus pada pelayanan pelanggan dan kualitas kerja.
     </p>
   </div>
 
-  <div class="card">
+  <div id="skill" class="section">
     <h2>Keterampilan</h2>
     <ul>
       <li>Microsoft Word & Excel</li>
@@ -121,7 +156,7 @@ ul {
     </ul>
   </div>
 
-  <div class="card">
+  <div id="exp" class="section">
     <h2>Pengalaman</h2>
 
     <div class="job">
@@ -146,7 +181,7 @@ ul {
 
   </div>
 
-  <div class="card">
+  <div id="edu" class="section">
     <h2>Pendidikan</h2>
     <ul>
       <li>SDN Sangiang 2</li>
@@ -156,6 +191,19 @@ ul {
   </div>
 
 </div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      sec.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
