@@ -21,54 +21,40 @@ body {
   color: #111;
 }
 
-/* NAVBAR */
+/* NAVBAR TIPIS */
 .navbar {
-  position: fixed;
-  top: 0;
   width: 100%;
   background: #000;
-  padding: 10px 20px;
+  padding: 8px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
 }
 
 /* kiri */
 .nav-left {
   color: #fff;
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 /* kanan */
+.nav-right {
+  display: flex;
+  gap: 12px;
+}
+
 .nav-right a {
-  margin-left: 15px;
   text-decoration: none;
   color: #fff;
-  font-size: 14px;
-  position: relative;
-}
-
-/* hover underline */
-.nav-right a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: white;
-  width: 0;
-  transition: 0.3s;
-}
-
-.nav-right a:hover::after {
-  width: 100%;
+  font-size: 13px;
 }
 
 /* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 80px 20px 20px; /* jarak dari navbar */
+  padding: 20px;
 }
 
 /* HEADER */
@@ -118,7 +104,6 @@ body {
   padding: 20px;
   text-align: center;
   background: #fafafa;
-  transition: 0.3s;
 }
 
 .skill-card img {
@@ -126,10 +111,6 @@ body {
   height: 65px;
   object-fit: contain;
   margin-bottom: 10px;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
 }
 
 ul {
@@ -156,18 +137,6 @@ ul {
 
 .wa-float img {
   width: 30px;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .nav-left {
-    font-size: 12px;
-  }
-
-  .nav-right a {
-    font-size: 12px;
-    margin-left: 10px;
-  }
 }
 </style>
 </head>
