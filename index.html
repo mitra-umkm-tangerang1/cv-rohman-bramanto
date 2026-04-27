@@ -21,7 +21,6 @@ body {
   color: #111;
 }
 
-/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -29,7 +28,6 @@ body {
   padding: 15px;
   text-align: center;
   border-bottom: 1px solid #eee;
-  z-index: 100;
 }
 
 .navbar a {
@@ -39,14 +37,12 @@ body {
   font-weight: 500;
 }
 
-/* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
 }
 
-/* HEADER */
 .header {
   text-align: center;
   padding: 40px 20px;
@@ -61,7 +57,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* SECTION */
 .section {
   margin-top: 40px;
   opacity: 0;
@@ -80,7 +75,6 @@ body {
   display: inline-block;
 }
 
-/* SKILL CARD */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -92,7 +86,6 @@ body {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  transition: 0.3s;
   background: #fafafa;
 }
 
@@ -102,15 +95,6 @@ body {
   margin-bottom: 10px;
 }
 
-.skill-card p {
-  font-weight: 500;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-}
-
-/* LIST */
 ul {
   padding-left: 20px;
 }
@@ -119,7 +103,7 @@ ul {
   margin-top: 10px;
 }
 
-/* FLOATING WA */
+/* WA FLOAT */
 .wa-float {
   position: fixed;
   bottom: 20px;
@@ -131,19 +115,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 999;
 }
 
 .wa-float img {
   width: 30px;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
 }
 </style>
 </head>
@@ -171,8 +146,8 @@ ul {
   <div id="about" class="section">
     <h2>Ringkasan</h2>
     <p>
-      Berpengalaman di bidang retail dan manufaktur, terbiasa bekerja dengan target,
-      disiplin tinggi, serta fokus pada pelayanan pelanggan dan kualitas kerja.
+      Berpengalaman di bidang retail dan manufaktur, disiplin tinggi,
+      terbiasa bekerja dengan target dan fokus pada pelayanan pelanggan.
     </p>
   </div>
 
@@ -182,12 +157,12 @@ ul {
     <div class="skill-grid">
 
       <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/word/word-original.svg">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png">
         <p>Microsoft Word</p>
       </div>
 
       <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732228.png">
         <p>Microsoft Excel</p>
       </div>
 
@@ -240,7 +215,6 @@ ul {
 
 </div>
 
-<!-- WA FLOAT -->
 <a class="wa-float" href="https://wa.me/6285718539571" target="_blank">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
