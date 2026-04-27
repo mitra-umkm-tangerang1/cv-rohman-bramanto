@@ -41,7 +41,7 @@ body {
 
 /* CONTAINER */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 20px;
 }
@@ -57,13 +57,13 @@ body {
   height: 140px;
   object-fit: cover;
   border-radius: 50%;
+  border: 3px solid black;
   margin-bottom: 15px;
-  border: 3px solid #000;
 }
 
 /* SECTION */
 .section {
-  margin-top: 30px;
+  margin-top: 40px;
   opacity: 0;
   transform: translateY(30px);
   transition: 0.6s;
@@ -75,9 +75,39 @@ body {
 }
 
 .section h2 {
-  margin-bottom: 10px;
-  border-bottom: 2px solid #000;
+  margin-bottom: 15px;
+  border-bottom: 2px solid black;
   display: inline-block;
+}
+
+/* SKILL CARD GRID */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.skill-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.skill-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.skill-card p {
+  padding: 10px;
+  font-weight: 500;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
 }
 
 /* LIST */
@@ -89,26 +119,30 @@ ul {
   margin-top: 10px;
 }
 
-/* BUTTON WA */
-.wa-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
+/* FLOATING WA BUTTON */
+.wa-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   background: #25D366;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 999;
 }
 
-/* MOBILE FEEL */
+.wa-float img {
+  width: 30px;
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
   .container {
     padding: 15px;
-  }
-
-  .navbar {
-    font-size: 14px;
   }
 }
 </style>
@@ -132,11 +166,6 @@ ul {
     <p>Kabupaten Tangerang</p>
     <p>0857-1853-9571</p>
     <p>rohmanengkoh007@gmail.com</p>
-
-    <!-- TOMBOL WHATSAPP -->
-    <a class="wa-btn" href="https://wa.me/6285718539571" target="_blank">
-      Hubungi Saya
-    </a>
   </div>
 
   <div id="about" class="section">
@@ -149,11 +178,30 @@ ul {
 
   <div id="skill" class="section">
     <h2>Keterampilan</h2>
-    <ul>
-      <li>Microsoft Word & Excel</li>
-      <li>Google Analytics</li>
-      <li>Editing</li>
-    </ul>
+
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <img src="https://source.unsplash.com/300x200/?office,word">
+        <p>Microsoft Word</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://source.unsplash.com/300x200/?excel,data">
+        <p>Microsoft Excel</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://source.unsplash.com/300x200/?analytics,chart">
+        <p>Google Analytics</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://source.unsplash.com/300x200/?editing,video">
+        <p>Editing</p>
+      </div>
+
+    </div>
   </div>
 
   <div id="exp" class="section">
@@ -191,6 +239,11 @@ ul {
   </div>
 
 </div>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/6285718539571" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
 <script>
 const sections = document.querySelectorAll('.section');
